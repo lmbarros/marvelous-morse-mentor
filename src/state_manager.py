@@ -5,6 +5,12 @@
 #
 
 class State:
+    def push(self, state):
+        self.state_manager.push(state)
+
+    def pop(self):
+        self.state_manager.pop()
+
     def on_tick(self, hw):
         pass
 
@@ -28,15 +34,17 @@ class StateManager:
     def __init__(self, hw, initialState):
         self.hw = hw
         self.stack = [initialState]
+        initialState.state_manager = self
         initialState.on_enter(self.hw)
 
     def push(self, state):
+        state.state_manager = self
         self.stack.append(state)
         state.on_enter(self.hw)
 
     def pop(self):
         self.stack.pop()
-        top().on_enter(self.hw)
+        self.top().on_enter(self.hw)
 
     def top(self):
         return self.stack[len(self.stack)-1]
