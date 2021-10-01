@@ -1,5 +1,7 @@
 import time
+from grove.grove_button import GroveButton
 from grove.grove_led import GroveLed
+from grove.grove_thumb_joystick import GroveThumbJoystick
 from grove.factory import Factory
 
 # Transform this into simple functions, maybe in a separate file, probably using
@@ -25,6 +27,19 @@ def main():
     ledPin = 5
     buttonPin = 16
     joyPin = 0
+
+    # Button
+    theButton = GroveButton(buttonPin)
+    def onPress(t):
+        print("Button pressed, t = {0}".format(round(t, 6)))
+    def onRelease(t):
+        print("Button released, t = {0}".format(round(t, 6)))
+
+    theButton.on_press = onPress
+    theButton.on_release = onRelease
+
+    # Joystick
+    theJoy = GroveThumbJoystick(joyPin)
 
     # LED
     theLED = GroveLed(ledPin)
@@ -56,6 +71,8 @@ def main():
         theLED.off()
         time.sleep(1.5)
 
+        x, y = theJoy.value
+        print("Joystick: {},{}".format(x, y))
 
 
 if __name__ == '__main__':
