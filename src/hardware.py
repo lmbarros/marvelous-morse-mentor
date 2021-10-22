@@ -70,21 +70,21 @@ class Hardware:
         self.joystick_direction = new_joystick_direction
 
 
-    def startBuzzing(self):
+    def start_buzzing(self):
         # Docs say to pass 0 to play forever, but didn't work for me. Tried -1
         # and worked.
         self.buzzer.playSound(BUZZER_NOTE, -1)
 
 
-    def stopBuzzing(self):
+    def stop_buzzing(self):
         self.buzzer.stopSound()
 
 
-    def ledOn(self):
+    def led_on(self):
         self.led.on()
 
 
-    def ledOff(self):
+    def led_off(self):
         self.led.off()
 
 
