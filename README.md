@@ -27,3 +27,12 @@ This is what I have connected to the Grove Base Hat:
   not the perfect UI choice, but I wanted to use an analog input to enrich my
   learning experience).
 * *PWM port*: a [buzzer](https://www.seeedstudio.com/Grove-Buzzer.html).
+
+## Interesting commits
+
+Here are some commits that show how to use certain balena features.
+
+* [9b53ffb4feb4d053b7ac79a2faf5f39011da1a5d](https://github.com/lmbarros/marvelous-morse-mentor/commit/9b53ffb4feb4d053b7ac79a2faf5f39011da1a5d):
+  Convert from a single-container app to a multi-container app. In fact, the app
+  remains as a single container, but this shows, *e.g.*, how to configure a
+  multi-container app container such that it can access the GPIO.
