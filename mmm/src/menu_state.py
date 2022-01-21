@@ -6,11 +6,11 @@
 
 import state_manager
 import challenge_state
-import learn_state
+import practice_state
 
 class MenuState(state_manager.State):
     def __init__(self):
-        self.modes = [ "<     Learn    >", "<   Challenge  >" ]
+        self.modes = [ "<   Practice   >", "<   Challenge  >" ]
         self.selected_mode = 0
 
 
@@ -22,7 +22,7 @@ class MenuState(state_manager.State):
 
     def on_button_released(self, hw):
         if self.selected_mode == 0:
-            self.push(learn_state.LearnState())
+            self.push(practice_state.PracticeState())
         elif self.selected_mode == 1:
             self.push(challenge_state.ChallengeState())
 

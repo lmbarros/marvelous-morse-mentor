@@ -15,7 +15,7 @@ STATE_GOODBYING="GOODBYING"
 STATE_FEEDBACKING="FEEDBACKING"
 
 
-class LearnState(state_manager.State):
+class PracticeState(state_manager.State):
     state = STATE_HELLOING
     last_input_time = 0.0
     last_tick_time = 0.0
@@ -109,7 +109,7 @@ class LearnState(state_manager.State):
     def transition_to_helloing(self, hw):
         self.state = STATE_HELLOING
         self.secs_till_timeout = 2.5
-        hw.display("    Learning    ", "      Mode      ")
+        hw.display("    Practice    ", "      Mode      ")
 
 
     def transition_to_goodbying(self, hw, top, bottom):
