@@ -46,6 +46,22 @@ to_morse = {
 }
 
 
+# These are all symbols MMM knows, sorted by the learning priority: symbols
+# first on the list are assumed to be more important to learn than those that
+# appear later. This is based on the frequency of occurrence in the English
+# language, with some tweaks.
+symbols_by_learning_order = [
+    # First the vowels
+    "A", "E", "I", "O", "U",
+
+    # Then the numbers
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
+
+    # Then the consonants, by frequency of occurrence in English
+    "R", "T", "N", "S", "L", "C", "D", "P", "M", "H", "G",
+    "B", "F", "Y", "W", "K", "V", "X", "Z", "J", "Q",
+]
+
 def random_symbol():
     """ Returns a tuple like ("V", "...-").
     """

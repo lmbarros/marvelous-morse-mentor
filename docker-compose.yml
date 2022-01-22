@@ -5,6 +5,8 @@
 #
 
 version: '2'
+volumes:
+    mmm-data:
 services:
     mmm:
         build: ./mmm
@@ -16,3 +18,5 @@ services:
             - /dev/mem:/dev/mem
         cap_add:
             - SYS_RAWIO
+        volumes:
+            - 'mmm-data:/data'
