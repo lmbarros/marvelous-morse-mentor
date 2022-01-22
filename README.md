@@ -36,3 +36,7 @@ Here are some commits that show how to use certain balena features.
   Convert from a single-container app to a multi-container app. In fact, the app
   remains as a single container, but this shows, *e.g.*, how to configure a
   multi-container app container such that it can access the GPIO.
+* [89c9e18dfbbccf09b1a9db5dc0ed684ac3a2c6d3](https://github.com/lmbarros/marvelous-morse-mentor/commit/89c9e18dfbbccf09b1a9db5dc0ed684ac3a2c6d3):
+  Add a volume called `mmm-data`. The volume itself is set up in
+  `docker-compose.yml`; the other changes on the commit implement a feature that
+  makes use of this volume to persist data.
