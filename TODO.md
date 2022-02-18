@@ -1,6 +1,5 @@
 # TODO
 
-* Env var to configure how long MMM waits before accepting an input.
 * Second container with an HTTP server showing the learn state. Allow to clear
   the learn state. Enable the device public URL.
 * Challenge mode: MMM asks for something in morse, user replies in morse.

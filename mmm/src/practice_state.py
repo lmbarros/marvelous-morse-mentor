@@ -5,8 +5,10 @@
 #
 
 import time
-import state_manager
+
 import morse
+import state_manager
+import util
 
 # The possible substates
 STATE_HELLOING="HELLOING"
@@ -77,9 +79,9 @@ class PracticeState(state_manager.State):
             if self.secs_till_timeout <= 0.0:
                 self.transition_to_listening(hw)
         elif self.state == STATE_LISTENING:
-            if len(self.inputs) > 0 and self.secs_since_last_input > 5.0:
+            if len(self.inputs) > 0 and self.secs_since_last_input > util.input_timeout_secs() / 2:
                 self.transition_to_feedbacking(hw)
-            elif self.secs_since_last_input > 10.0:
+            elif self.secs_since_last_input > util.input_timeout_secs():
                 self.transition_to_goodbying(hw, "   Time out!    ", "   Leaving...   ")
                 return
         elif self.state == STATE_GOODBYING:

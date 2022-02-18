@@ -28,6 +28,14 @@ This is what I have connected to the Grove Base Hat:
   learning experience).
 * *PWM port*: a [buzzer](https://www.seeedstudio.com/Grove-Buzzer.html).
 
+## Configuration
+
+There's one environment variable used by the `mmm` service:
+
+* `MMM_INPUT_TIMEOUT_SECS` (default: 10): The input timeout, in seconds. This is
+  how long the system will wait for user input before giving up an returning to
+  the menu. Also, it will consider any input complete after half this much.
+
 ## Interesting commits
 
 Here are some commits that show how to use certain balena features.
