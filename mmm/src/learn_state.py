@@ -4,12 +4,14 @@
 # Licensed under the Apache License 2.0 (see the LICENSE file for details)
 #
 
-import pickle
+import json
 import time
 import random
 
 import state_manager
 import morse
+
+LEARN_STATE_FILE_NAME="/data/learn-state.json"
 
 # The possible substates
 STATE_HELLOING="HELLOING"
@@ -206,16 +208,16 @@ def blank_learn_state():
 def save_learn_state(ls):
     """Saves the learn state.
     """
-    with open("/data/learn-state.pkl", "wb") as f:
-        pickle.dump(ls, f)
+    with open(LEARN_STATE_FILE_NAME, "w") as f:
+        json.dump(ls, f)
 
 
 def load_learn_state():
     """Loads the learn state, create a brand new one if not create yet.
     """
     try:
-        with open("/data/learn-state.pkl", "rb") as f:
-            return pickle.load(f)
+        with open(LEARN_STATE_FILE_NAME, "r") as f:
+            return json.load(f)
     except IOError:
         print("Creating new learn state")
         return blank_learn_state()
