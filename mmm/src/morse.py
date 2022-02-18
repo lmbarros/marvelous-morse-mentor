@@ -143,11 +143,11 @@ def grade(morse_code, inputs):
 
         i += 2
 
-    if worst_prec < 0.5:
+    if worst_prec < 0.35:
         return (False, "Not good! Bad", "dit-dahs timing.")
-    elif worst_prec < 0.65:
+    elif worst_prec < 0.55:
         return (True, "Good! Can better", "dit-dahs timing.")
-    elif worst_prec < 0.8:
+    elif worst_prec < 0.75:
         return (True, "Good!", "Almost perfect!")
     else:
         return (True, "Great!", "Nailed it!")

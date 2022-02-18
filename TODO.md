@@ -1,7 +1,6 @@
 # TODO
 
 * Save learn state in JSON: easier to check and tweak manually.
-* Why can't I get 1 (".----") right?
 * Env var to configure how long MMM waits before accepting an input.
 * Second container with an HTTP server showing the learn state. Allow to clear
   the learn state. Enable the device public URL.
