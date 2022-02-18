@@ -48,3 +48,8 @@ Here are some commits that show how to use certain balena features.
   Add a volume called `mmm-data`. The volume itself is set up in
   `docker-compose.yml`; the other changes on the commit implement a feature that
   makes use of this volume to persist data.
+* [5b0753a5033911e6490c23d1edad6b752cf3cbee](https://github.com/lmbarros/marvelous-morse-mentor/commit/5b0753a5033911e6490c23d1edad6b752cf3cbee):
+  Read the input timeout from an environment variable, which can be set a number
+  different of ways, like via the balena Dashboard. It's easy to set it for the
+  whole fleet at once, to a specific device only. If set for the whole fleet,
+  it's simple to override it for one specific device.
